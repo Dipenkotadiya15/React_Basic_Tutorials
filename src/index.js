@@ -312,47 +312,231 @@ import './index.css';
 // ===========================================================================================
 
 // 13_Simple List
-const books = [
-{
-  img: 'https://images-eu.ssl-images-amazon.com/images/I/81tEgsxpNZS._AC_UL300_SR300,200_.jpg',
-  title: 'As a Man Thinketh',
-  author: 'James Allen',
-},
 
-{
-  img: 'https://images-eu.ssl-images-amazon.com/images/I/61AtWVLF2CL._AC_UL300_SR300,200_.jpg',
-  title: 'Think and Grow Rich',
-  author: 'Napoleon Hill',
-},
+// const books = [
+// {
+//   img: 'https://images-eu.ssl-images-amazon.com/images/I/81tEgsxpNZS._AC_UL300_SR300,200_.jpg',
+//   title: 'As a Man Thinketh',
+//   author: 'James Allen',
+// },
 
-];
+// {
+//   img: 'https://images-eu.ssl-images-amazon.com/images/I/61AtWVLF2CL._AC_UL300_SR300,200_.jpg',
+//   title: 'Think and Grow Rich',
+//   author: 'Napoleon Hill',
+// },
 
-const names = ['john', 'peter', 'susan'];
-const newName = names.map((student) => { 
-  // console.log(student);
-  return <h1>{student}</h1>
-});
-console.log(newName);
+// ];
+
+// const names = ['john', 'peter', 'susan'];
+// const newName = names.map((student) => { 
+//   // console.log(student);
+//   return <h1>{student}</h1>
+// });
+// console.log(newName);
+
+// function Book_list() {
+//   return (
+//     <section className='booklist'>
+//     {newName}
+//     </section>
+//   )
+// }
+
+// const Book = (props) => {
+//   const { img, title, author } = props
+//   // console.log(props)
+//   return (
+//     <article className='book'>
+//       <img src={img} alt='' />
+//       <h1>{title}</h1>
+//       <h4>{author}</h4>
+//     </article>
+//   )
+// }
+
+// ===========================================================================================
+
+// 14_Proper List 
+
+// const books = [
+//   {
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/81tEgsxpNZS._AC_UL300_SR300,200_.jpg',
+//     title: 'As a Man Thinketh',
+//     author: 'James Allen',
+//   },
+
+//   {
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/61AtWVLF2CL._AC_UL300_SR300,200_.jpg',
+//     title: 'Think and Grow Rich',
+//     author: 'Napoleon Hill',
+//   },
+
+//   {
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL600_SR300,200_.jpg',
+//     title: 'The Psychology of Money',
+//     author: 'Morgan Housel',
+//   },
+// ]
+
+
+// function Book_list() {
+//   return <section className='booklist'>{books.map((book) => {
+//     return (
+//       <Book book={book}></Book>
+//     );
+//   })}</section>
+// }
+
+// const Book = (props) => {
+//   const { img, title, author } = props.book
+//   return (
+//     <article className='book'>
+//       <img src={img} alt='' />
+//       <h1>{title}</h1>
+//       <h4>{author}</h4>
+//     </article>
+//   )
+// }
+
+// ===========================================================================================
+
+// 15_Key prop & Spread operator 
+
+// const books = [
+//   { 
+//     id:1,
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/81tEgsxpNZS._AC_UL300_SR300,200_.jpg',
+//     title: 'As a Man Thinketh',
+//     author: 'James Allen',
+//   },
+
+//   {
+//     id:2,
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/61AtWVLF2CL._AC_UL300_SR300,200_.jpg',
+//     title: 'Think and Grow Rich',
+//     author: 'Napoleon Hill',
+//   },
+
+//   {
+//     id:3,
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL600_SR300,200_.jpg',
+//     title: 'The Psychology of Money',
+//     author: 'Morgan Housel',
+//   },
+// ]
+
+// function Book_list() {
+//   return (
+//     <section className='booklist'>
+//       {books.map((book, index) => {
+//         return <Book key={book.id} {...book}></Book>
+//       })}
+//     </section>
+//   )
+// }
+
+// const Book = ( {img, title, author} ) => {
+//   // console.log(props); 
+//   // const { img, title, author } = props
+//   return (
+//     <article className='book'>
+//       <img src={img} alt='' />
+//       <h1>{title}</h1>
+//       <h4>{author}</h4>
+//     </article>
+//   )
+// }
+
+// ===========================================================================================
+
+// 16_Event Basics
+
+// const books = [
+//   {
+//     id: 1,
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/81tEgsxpNZS._AC_UL300_SR300,200_.jpg',
+//     title: 'As a Man Thinketh',
+//     author: 'James Allen',
+//   },
+
+//   {
+//     id: 2,
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/61AtWVLF2CL._AC_UL300_SR300,200_.jpg',
+//     title: 'Think and Grow Rich',
+//     author: 'Napoleon Hill',
+//   },
+
+//   {
+//     id: 3,
+//     img: 'https://images-eu.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_UL600_SR300,200_.jpg',
+//     title: 'The Psychology of Money',
+//     author: 'Morgan Housel',
+//   },
+// ]
+
+// function Book_list() {
+//   return (
+//     <section className='booklist'>
+//       {books.map((book, index) => {
+//         return <Book key={book.id} {...book}></Book>
+//       })}
+//     </section>
+//   )
+// }
+
+// const Book = ({ img, title, author }) => {
+//   // attribute & eventHandler
+//   // onClick onMouseOver
+
+//   const clickHandler = (e) => {
+//     console.log(e);
+//     console.log(e.target);
+//     alert('Hello world')
+//   }
+
+//   const complexEx = (author) => {
+//     console.log(author);
+//   }
+
+//   return (
+//     <article className='book' onMouseOver={() => {
+//       console.log(title);
+//     }}>
+//       <img src={img} alt='' />
+//       <h1 onClick={() => console.log(title)}>{title}</h1>
+//       <h4>{author}</h4>
+//       <button type='button' onClick={clickHandler}>
+//         Referance Example
+//       </button>
+//       <button type='button' onClick={() => complexEx(author)}>
+//         More Complex Example
+//       </button>
+//     </article>
+//   )
+// }
+
+// ===========================================================================================
+
+// 17_Import & Export statement 
+
+import {Data} from './books';
+import MyBook from './book';
+import { Greeting } from './testing/testing';
 
 function Book_list() {
+  console.log(Greeting);
   return (
     <section className='booklist'>
-    {newName}
+      {Data.map((book, index) => {
+        return <MyBook key={book.id} {...book}></MyBook>
+      })}
     </section>
   )
 }
 
-const Book = (props) => {
-  const { img, title, author } = props
-  // console.log(props)
-  return (
-    <article className='book'>
-      <img src={img} alt='' />
-      <h1>{title}</h1>
-      <h4>{author}</h4>
-    </article>
-  )
-}
+
+// ===========================================================================================
 
 // ===========================================================================================
 
