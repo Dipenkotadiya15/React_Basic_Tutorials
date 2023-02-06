@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react';
 import ReactDom from 'react-dom'
 
 import './index.css';
@@ -524,7 +524,7 @@ import {Data} from './books';
 import MyBook from './book';
 import { Greeting } from './testing/testing';
 
-function Book_list() {
+function Booklist() {
   console.log(Greeting);
   return (
     <section className='booklist'>
@@ -537,4 +537,4 @@ function Book_list() {
 
 // ===========================================================================================
 
-ReactDom.render(<Book_list />, document.getElementById('root'))
+ReactDom.render(<Booklist />, document.getElementById('root'))
